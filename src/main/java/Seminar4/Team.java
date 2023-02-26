@@ -25,12 +25,12 @@ public class Team<T extends BaseHero> implements Iterable<T> {
         return teamHealth;
     }
 
-    public int getMaxRange(){
-        int maxRange=0;
+    public int getMaxRange() {
+        int maxRange = 0;
         for (T hero : dreamTeam) {
-            if(hero instanceof Archer){
-                Archer archer = (Archer)hero;
-                if(maxRange < archer.range()){
+            if (hero instanceof Archer) {
+                Archer archer = (Archer) hero;
+                if (maxRange < archer.range()) {
                     maxRange = archer.range();
                 }
             }
@@ -38,11 +38,21 @@ public class Team<T extends BaseHero> implements Iterable<T> {
         return maxRange;
     }
 
-    public int getSumDamage (){
+    public int getSumDamage() {
         int sumDamage = 0;
         for (T hero : dreamTeam) {
             sumDamage += hero.getWeapon().damage();
         }
         return sumDamage;
+    }
+
+    public int getMinDefend() {
+        int minDefend = 0;
+        for (T hero : dreamTeam) {
+            if (hero.getShield().defend() > minDefend) {
+                minDefend = hero.getShield().defend();
+            }
+        }
+        return minDefend;
     }
 }

@@ -2,7 +2,7 @@ package Seminar4;
 
 import java.util.Random;
 
-public abstract class BaseHero <W extends Weapon> {
+public abstract class BaseHero <W extends Weapon, S extends Shield> {
 
     private String name;
 
@@ -10,10 +10,13 @@ public abstract class BaseHero <W extends Weapon> {
 
     protected W weapon;
 
-    protected BaseHero(String name, int health, W weapon) {
+    protected S shield;
+
+    protected BaseHero(String name, int health, W weapon, S shield) {
         this.name = name;
         this.health = health;
         this.weapon = weapon;
+        this.shield = shield;
     }
 
     public String getName() {
@@ -26,6 +29,9 @@ public abstract class BaseHero <W extends Weapon> {
 
     public W getWeapon() {
         return weapon;
+    }
+    public S getShield() {
+        return shield;
     }
 
     public void setName(String name) {

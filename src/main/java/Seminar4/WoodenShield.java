@@ -12,6 +12,10 @@ public class WoodenShield implements Shield{
         this.defendPoint = defendPoint;
     }
 
+    public int getDefendPoint() {
+        return defendPoint;
+    }
+
     @Override
     public int defend() {
         return defendPoint;

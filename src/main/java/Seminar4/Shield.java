@@ -6,7 +6,6 @@ package Seminar4;
 // Добавить метод определения минимального щита в команде.
 
 public interface Shield {
-
     int defend();
 
 }

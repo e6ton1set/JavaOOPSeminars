@@ -1,9 +1,9 @@
 package Seminar4;
 
-public class Footman extends BaseHero<Melee>{
+public class Footman extends BaseHero<Melee, Shield>{
 
-    public Footman(String name, int health, Melee weapon) {
-        super(name, health, weapon);
+    public Footman(String name, int health, Melee weapon, Shield shield) {
+        super(name, health, weapon, shield);
     }
 
     @Override
